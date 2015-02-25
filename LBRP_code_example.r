@@ -176,8 +176,9 @@ plot.Pobj<-function(Pobjs.in,y.in,y.int,RPs_h,h.in=T,h.spp.in,RP.comp="TP",plot.
 
 
 #Example
-load(file="C:/Users/copeja/Desktop/RPs_in.DMP")
-Blue.LtComps<-read.table("clipboard", header=T)
+Dir<-"C:/Users/copeja/Desktop"
+load(file=pastes(Dir"/RPs_in.DMP"),sep="")
+load(file=pastes(Dir"/Blue_LtComps.DMP"),sep="")
 Blue.ages<-c(0:60)
 Blue.Linf<-38.4573
 Blue.k<-0.111716
