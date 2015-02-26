@@ -173,12 +173,14 @@ plot.Pobj<-function(Pobjs.in,y.in,y.int,RPs_h,h.in=T,h.spp.in,RP.comp="TP",plot.
   if(plot.leg == T){smartlegend("left","bottom",c(expression(paste(P[x], "> RP",sep="")),expression(paste(P[x], "< RP",sep="")),"Target RP","Limit RP"),lty=c(NA,NA,NA,NA),lwd=c(NA,NA,NA,NA),pch=c(21,21,3,4),col=c("black","black","green","red"),pt.bg=c("black","white",NA,NA),pt.cex=1.25,bty="n")}
   return(RPs.plot.in)
 }
-
+####################################################
+####################################################
 
 #Example
-Dir<-"C:/Users/copeja/Desktop"
-load(file=pastes(Dir"/RPs_in.DMP"),sep="")
-load(file=pastes(Dir"/Blue_LtComps.DMP"),sep="")
+Dir<-"C:/Users/copeja/Documents/GitHub/LBRP"
+load(file=paste(Dir,"/RPs_in.DMP",sep=""))
+load(file=paste(Dir,"/Blue_LtComps.DMP",sep=""))
+h<-0.58
 Blue.ages<-c(0:60)
 Blue.Linf<-38.4573
 Blue.k<-0.111716
@@ -189,5 +191,5 @@ Blue.a.wl<-0.00003408
 Blue.b.wl<-2.874
 Blue.Pobjs.All<-Froese.plus(Blue.LtComps,seq(10,52,by=2),Blue.Linf,Blue.k,Blue.t0,Blue.M,Blue.a.wl,Blue.b.wl,Blue.Lmat,Blue.ages,fleet.pick=c(1:4),gender.pick=0)
 #Plot relative to reference points
-Blue.px.TP<-plot.Pobj(Blue.Pobjs.All,c(0,1),0.1,RPs_h,h.in=T,h.spp.in=h.spp[3],plot.leg=F)
-Blue.px.LP<-plot.Pobj(Blue.Pobjs.All,c(0,1),0.1,RPs_h,h.in=T,h.spp.in=h.spp[3],RP.comp="LP",plot.leg=F)
+Blue.px.TP<-plot.Pobj(Blue.Pobjs.All,c(0,1),0.1,RPs_h,h.in=T,h.spp.in=h,plot.leg=F)
+Blue.px.LP<-plot.Pobj(Blue.Pobjs.All,c(0,1),0.1,RPs_h,h.in=T,h.spp.in=h,RP.comp="LP",plot.leg=F)
